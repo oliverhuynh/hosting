@@ -338,7 +338,7 @@ function hosting_site_form($node, &$form_state) {
     '#description' => t('The database server the site will use to host its content.'),
     '#options' => hosting_get_servers('db'),
     '#default_value' => isset($node->db_server) ? $node->db_server : HOSTING_DEFAULT_DB_SERVER,
-  ), '_hosting_node_link');
+  ), '_hosting_node_link', TRUE);
 
   foreach (array('verified', 'last_cron', 'site_status') as $extra_attribute) {
     $form["$extra_attribute"] = array(
