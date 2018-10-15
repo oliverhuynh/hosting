@@ -254,7 +254,7 @@ function hosting_site_form($node, &$form_state) {
       'event' => 'change',
       'method' => 'replace',
     ),
-  ), '_hosting_node_link');
+  ), '_hosting_node_link', 1);
 
   // Override the defaults if the profile has been changed.
   if (isset($form_state['values']['profile'])) {
@@ -311,7 +311,7 @@ function hosting_site_form($node, &$form_state) {
       'event' => 'change',
       'method' => 'replace',
     ),
-  ), '_hosting_node_link');
+  ), '_hosting_node_link', 1);
 
   // Override the defaults if the profile has been changed.
   if (isset($form_state['values']['platform'])) {
