@@ -254,7 +254,7 @@ function hosting_site_form($node, &$form_state) {
       'event' => 'change',
       'method' => 'replace',
     ),
-  ), '_hosting_node_link', 1);
+  ), '_hosting_node_link', isset($_GET['debug']));
 
   // Override the defaults if the profile has been changed.
   if (isset($form_state['values']['profile'])) {
@@ -311,7 +311,7 @@ function hosting_site_form($node, &$form_state) {
       'event' => 'change',
       'method' => 'replace',
     ),
-  ), '_hosting_node_link', 1);
+  ), '_hosting_node_link', isset($_GET['debug']));
 
   // Override the defaults if the profile has been changed.
   if (isset($form_state['values']['platform'])) {
@@ -338,7 +338,7 @@ function hosting_site_form($node, &$form_state) {
     '#description' => t('The database server the site will use to host its content.'),
     '#options' => hosting_get_servers('db'),
     '#default_value' => isset($node->db_server) ? $node->db_server : HOSTING_DEFAULT_DB_SERVER,
-  ), '_hosting_node_link', TRUE);
+  ), '_hosting_node_link', isset($_GET['debug']));
 
   foreach (array('verified', 'last_cron', 'site_status') as $extra_attribute) {
     $form["$extra_attribute"] = array(
